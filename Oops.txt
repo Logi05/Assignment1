@@ -1,0 +1,722 @@
+Inheritance 1
+-------------
+
+public class Parent
+{
+void run(){
+System.out.println("Running");
+}
+}
+public class Child extends Parent
+{
+void display(){
+System.out.println("Displaying");
+}
+public class Inheritance
+{
+public static void main(String args[])
+{
+Child c=new Child();
+c.run();
+c.display();
+}
+}
+
+output:
+Running
+Displaying
+
+
+Inheritance 2
+-------------
+
+public class Inheritance
+{
+public int Multiply(int a,int b){
+return a*b;
+}
+}
+
+public class Sub extends Inheritance
+{
+public double add(double a,double b){
+return a+b;
+}
+}
+
+public class TestInheritance
+{
+public static void main(String args[])
+{
+Sub s=new Sub();
+int res=s.Multiply(5,5);
+double res1=s.add(6.3,3.5);
+System.out.println(res);
+System.out.println(res1);
+}
+}
+
+
+output:
+25
+9.8
+
+
+Inheritance 3
+-------------
+
+public class Adder
+{
+public int add(int a,int b){
+return a+b;
+}
+}
+
+public class Sub extends Adder
+{
+public int sub(int a,int b){
+return a-b;
+}
+}
+
+public class Inheritance
+{
+public static void main(String args[])
+{
+Sub c=new Sub();
+int res=c.add(5,5);
+int res1=c.sub(6,3);
+System.out.println(res);
+System.out.println(res1);
+}
+}
+
+output:
+
+10
+9
+
+
+
+
+Inheritance 4
+-------------
+
+public class Animal
+{
+void eat(){
+System.out.println("Eating");
+}
+}
+public class Dog extends Animal
+{
+void bark(){
+System.out.println("Barking");
+}
+}
+public class cat extends Animal{
+void mewo(){
+System.out.println("Meowing");
+}
+}
+public class Inheritance
+{
+public static void main(String args[])
+{
+Cat c=new Cat();
+c.meow();
+c.eat();
+}
+}
+
+output:
+Meowing
+Eating
+
+
+Inheritance 5
+-------------
+
+public class Animal
+{
+void eat(){
+System.out.println("Eating");
+}
+}
+public class Dog extends Animal
+{
+void bark(){
+System.out.println("Barking");
+}
+}
+public class BabyDog extends Dog{
+void weep(){
+System.out.println("Weeping");
+}
+}
+public class Inheritance
+{
+public static void main(String args[])
+{
+BabyDog b=new BabyDog();
+b.weep();
+b.bark();
+b.eat();
+}
+}
+
+output:
+Weeping
+Barking
+Eating
+
+
+Abstraction 1
+-------------
+
+abstract class Vehicle{
+abstract void run();
+}
+
+class Bike extends Vehicle{
+void run(){
+System.out.println("Bike is Running");
+}
+}
+public class TestAbstraction{
+public static void main(String args[]){
+Vehicle obj=new Bike();
+obj.run();
+}
+}
+
+
+output:
+Bike is running
+
+
+
+Abstraction 2
+-------------
+
+abstract class Shape{
+abstract void draw();
+void show();
+}
+
+class circle extends Shape{
+void show(){
+System.out.println("Circle created");
+}
+}
+
+class Rectangle extends Shape{
+void draw(){
+System.out.println("Drawing Rectangle");
+}
+
+public class TestAbstraction{
+public static void main(String args[]){
+Vehicle obj=new Circle();
+Vehicle obj1=new Rectangle();
+obj.show();
+obj1.draw();
+}
+}
+
+
+Output:
+Circle created
+Drawing Rectangle
+
+Abstraction 3
+-------------
+
+
+abstract class Malar{
+public void dance(){
+System.out.println("Dancing");
+}
+public abstract void sing();
+public abstract void cook();
+}
+
+abstract class Ram extends Malar{
+public void sing(){
+System.out.println("Singing");
+}}
+class Anu extends Ram{
+public void cook(){
+System.out.println("Cooking");
+}
+}
+
+public class Person{
+public static void main(String args[]){
+Malar obj=new Anu();
+obj.dance();
+obj.sing();
+obj.cook();
+}
+}
+
+output:
+Dancing
+Singing
+Cooking
+
+Abstraction 4
+-------------
+
+public class Ram extends GameObject{
+public void play(){
+System.out.println("Ram Playing");
+}
+}
+
+public class Shiva extends GameObject{
+public void play(){
+System.out.println("Shiva Playing");
+}
+}
+
+public abstract class GameObject{
+public abstract void draw();
+public static void main(String args[]){
+GameObject obj=new Ram();
+obj.draw();
+GameObject s=new Shiva();
+s.draw();
+}
+}
+
+
+output:
+Ram Playing
+Shiva Playing
+
+
+Encapsulation 1
+---------------
+
+public class Encapsulate{
+private int n1=50;
+private int n2=100;
+
+public int getn1()
+{
+return n1;
+}
+public int getn2()
+{
+return n2;
+}
+
+public void setn1(int n1){
+this.n1=n1;
+}
+public void setn2(int n2){
+this.n2=n2;
+}
+
+}
+
+
+public class TestEncapsulation{
+public static void main(String args[]){
+Encapsulate obj=new Encapsulate();
+obj.setn1("5");
+obj.setn2("10");
+System.out.println(obj.getn1());
+System.out.println(obj.getn2());
+}
+}
+
+output:
+50
+100
+
+
+
+
+Encapsulation 2
+---------------
+
+
+public class Encapsulate{
+private string name;
+private int age;
+private int rollNo;
+
+public string getname()
+{
+return name;
+}
+public int getage()
+{
+return age;
+}
+public int getrollNo()
+{
+return rollNo;
+}
+public void setname(string newName){
+name=newName;
+}
+public void setage(int newAge){
+age=newAge;
+}
+public void setrollNo(int newrollNo){
+rollNo=newrollNo;
+}
+}
+
+public class TestEncapsulation{
+public static void main(String args[]){
+Encapsulate obj=new Encapsulate();
+obj.setname("Logi");
+obj.setage("21")';
+obj.setrollNo("101");
+System.out.println("Name is:"+obj.getname());
+System.out.println("Age is:"+obj.getage());
+System.out.println("Roll No is:"+obj.getrollNo());
+}
+}
+
+
+output:
+Name is: Logi
+Age is: 21
+Roll No is: 101
+
+
+Polymorphism(Method Overloading)1
+--------------------------------
+
+class Adder
+{
+int add(){
+System.out.println("Adding");
+}
+int add(int a,int b){
+retun a+b;
+}
+int add(int a,int b, int c)
+{
+return a+b+c;
+}
+}
+class TestOverloadiong{
+public static void main(String args[])
+{
+Adder a=new Adder();
+a.add();
+int sum=a.add(5,2);
+int sum1=a.add(6,4,2);
+System.out.println(sum);
+System.out.println(sum1);
+}
+}
+
+output:
+Adding
+7
+12
+
+
+Polymorphism(Method Overloading)2
+--------------------------------
+
+class Adder
+{
+int add(inta,int b){
+retun a+b;
+}
+double add(double a,double b)
+{
+return a+b;
+}
+}
+class TestOverloadiong{
+public static void main(String args[])
+{
+Adder a=new Adder();
+int res=a.add(11,11);
+double res1=a.add(12.5,12.4);
+System.out.println(res);
+System.out.println(res1);
+}
+}
+
+output:
+22
+24.9
+
+
+
+
+Polymorphism(Method Overriding)1
+--------------------------------
+
+class Parent{
+void show(){
+System.out.println("Hello Parent");
+}
+}
+class Child extends Parent{
+void show(){
+System.out.println("Hello Child");
+}
+}
+public class Overriding{
+public static void main(String args[]){
+Parent obj=new Parent();
+Child obj1=new Child();
+
+Parent a;
+a=obj;
+
+a.show();
+}
+}
+
+output:
+Hello Parent
+
+
+Polymorphism(Method Overriding)2
+--------------------------------
+
+class Animal{
+void eat(){
+System.out.println("Animal is Eating");
+}
+}
+class Dog extends Animal{
+void eat(){
+System.out.println("Dog is eating");
+}
+}
+public class Overriding{
+public static void main(String args[]){
+Dog obj=new Dog();
+
+
+obj.eat();
+}
+}
+
+
+output:
+Dog is eating
+
+
+Polymorphism(Method Overriding)3
+--------------------------------
+
+class Animal{
+void eat(){
+System.out.println("Animal is Eating");
+}
+}
+class Dog extends Animal{
+
+}
+public class Overriding{
+public static void main(String args[]){
+Dog obj=new Dog();
+
+
+obj.eat();
+}
+}
+
+
+output:
+Animal is eating
+
+
+Interface 1
+-----------
+
+interface A{
+void show();
+void run();
+}
+class B implements A{
+void show(){
+System.out.println("Showing");
+}
+}
+class c implements A{
+void run(){
+System.out.println("Running");
+}
+}
+public class TestInterface{
+public static void main(String args[]){
+B obj=new B();
+C obj1=new C();
+obj.show();
+obj1.run();
+}
+}
+
+output:
+Showing
+Running
+
+
+Interface 2
+-----------
+
+interface A{
+void show();
+}
+
+interface B{
+void print();
+}
+
+class Interface implements A,B{
+public void show(){
+System.out.println("Showing");
+}
+public void print(){
+System.out.println("Printing");
+}
+
+public static void main(String args[]){
+Interface obj=new Interface();
+obj.show();
+obj.print();
+}
+}
+
+output:
+Showing
+Printing
+
+
+Interface 3
+-----------
+
+interface A{
+void show();
+}
+
+interface B{
+void show();
+}
+
+class Interface implements A,B{
+public void show(){
+System.out.println("Showing");
+}
+
+public static void main(String args[]){
+Interface obj=new Interface();
+obj.show();
+}
+}
+
+output:
+Showing
+
+
+Interface 4
+-----------
+interface A{
+void show();
+}
+
+interface B extends A{
+void print();
+}
+
+class Interface implements B{
+public void show(){
+System.out.println("Showing");
+}
+public void print(){
+System.out.println("Printing");
+}
+
+public static void main(String args[]){
+Interface obj=new Interface();
+obj.show();
+obj.print();
+}
+}
+
+output:
+Showing
+Printing
+
+
+
+Access Specifier
+Protected 1
+----------------
+
+package Salem;
+
+
+public class A{
+protected void run(){
+System.out.println("Running");
+}
+
+private void show(){
+System.out.println("Showing");
+}
+}
+_________
+
+package Erode;
+
+import Salem.A;
+
+public class B extends A{
+public static void main(String args[]){
+B obj=new B();
+obj.run();
+}
+}
+
+output:
+Running
+
+
+
+Access Specifier
+Protected 2
+---------------
+
+
+package Salem;
+
+
+public class A{
+protected string s="Hello";
+}
+
+_________
+
+package Erode;
+
+import Salem.A;
+
+public class B {
+public static void main(String args[]){
+A obj=new A();
+System.out.println(obj.s);
+}
+}
+
+output:
+Hello
+
+
+
+
